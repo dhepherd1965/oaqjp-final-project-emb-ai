@@ -17,8 +17,7 @@ def emotion_detector(text_to_analyse):
             final_reply[temp]=reply['emotionPredictions'][0]['emotion'][temp]
         final_reply['dominant_emotion']=sorted(final_reply,key=final_reply.get, reverse=True)[0]
         return final_reply
-    if status==400:
-        for temp in emotions:
-            final_reply[temp]=''
-        final_reply['dominant_emotion']=''
-        return final_reply
+    for temp in emotions:
+        final_reply[temp]=''
+    final_reply['dominant_emotion']=''
+    return final_reply
